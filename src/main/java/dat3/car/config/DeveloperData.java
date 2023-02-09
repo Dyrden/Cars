@@ -20,7 +20,6 @@ public class DeveloperData implements ApplicationRunner {
     public DeveloperData(CarRepository carRepository, MemberRepository memberRepository) {
         this.carRepository = carRepository;
         this.memberRepository = memberRepository;
-
     }
 
     @Override
@@ -50,15 +49,14 @@ public class DeveloperData implements ApplicationRunner {
             "city A",
             "500");
 
-
         member1.setFavoriteCarColours(Arrays.asList("Red", "Black"));
-        member2.setFavoriteCarColours(Arrays.asList("Blue", "Yellow", "Black"));
-
         member1.setPhones(Map.of("arbejde","12345678","hjem","87654321"));
-        member2.setPhones(Map.of("arbejde","67485763","hjem","58386715"));
-
         listOfMembers.add(member1);
+
+        member2.setFavoriteCarColours(Arrays.asList("Blue", "Yellow", "Black"));
+        member2.setPhones(Map.of("arbejde","67485763","hjem","58386715"));
         listOfMembers.add(member2);
+
 
         memberRepository.saveAll(listOfMembers);
 

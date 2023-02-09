@@ -7,9 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,10 +22,8 @@ import java.util.Map;
 @Entity(name="member")
 public class Member {
 
-
     @Id
     private String username;
-
     private String email;
     private String password;
     private String firstName;
@@ -41,10 +36,10 @@ public class Member {
 
 
     @CreationTimestamp
-    private LocalDateTime createdDate;
+    private LocalDateTime created;
 
     @UpdateTimestamp
-    private LocalDateTime lastEditedDate;
+    private LocalDateTime lastEdited;
 
     @ElementCollection
     private List<String> favoriteCarColours = new ArrayList<>();

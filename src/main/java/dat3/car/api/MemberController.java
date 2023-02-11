@@ -14,18 +14,6 @@ import java.util.List;
 @RestController
 @RequestMapping("api/members")
 public class MemberController {
-/*
-    DÅRLIGT
-
-    @Autowired  //Deliberately added via Autowired, remove this endpoint when you know why it's bad
-    MemberRepository memberRepository;
-
-
-    @GetMapping("/bad")
-    public List<Member> getMembersBad() {
-        return memberRepository.findAll();
-    }
-* */
 
     MemberService memberService;
 
@@ -42,7 +30,7 @@ public class MemberController {
 
     //Security -> ADMIN ONLY + ???
     @GetMapping(path = "/{username}")
-    MemberResponse getMemberById(@PathVariable String username) throws Exception {
+    MemberResponse getMemberById(@PathVariable String username) {
         return memberService.getMemberById(username);
     }
 

@@ -20,7 +20,7 @@ public class CarController {
         this.carService = carService;
     }
 
-    //ADMIN / USER
+    // USER
     @GetMapping
     List<CarResponse> getCars() {
         return carService.getCars();

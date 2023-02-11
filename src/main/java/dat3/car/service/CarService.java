@@ -48,7 +48,7 @@ public class CarService {
         return new CarResponse(car,true);
     }
 
-    public void deleteMember(int id) {
+    public void deleteCar(int id) {
         carRepository.deleteById(id);
     }
 

@@ -3,6 +3,7 @@ package dat3.car.api;
 import dat3.car.DTO.car.CarRequest;
 import dat3.car.DTO.car.CarResponse;
 import dat3.car.service.CarService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -52,8 +53,9 @@ public class CarController {
 
     //ADMIN
     @DeleteMapping("/{id}")
-    void deleteCarById(@PathVariable int id) {
-        carService.deleteMember(id);
+    ResponseEntity<Boolean> deleteCarById(@PathVariable int id) {
+        carService.deleteCar(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 }

@@ -1,5 +1,6 @@
 package dat3.car.service;
 
+import dat3.car.DTO.member.MemberRequest;
 import dat3.car.DTO.member.MemberResponse;
 import dat3.car.entity.Member;
 import dat3.car.repository.MemberRepository;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -26,7 +28,7 @@ class MemberServiceH2Test {
     boolean dataIsReady = false;
     @BeforeEach
     void setUp() {
-        if(!dataIsReady){  //Explain this
+        if(!dataIsReady){
             memberRepository.save(new Member("m1", "test12", "m1@a.dk",  "bb", "Olsen", "xx vej 34", "Lyngby", "2800"));
             memberRepository.save(new Member("m2", "test12", "m2@a.dk", "aa", "hansen", "xx vej 34", "Lyngby", "2800"));
             dataIsReady = true;
@@ -37,10 +39,22 @@ class MemberServiceH2Test {
 
     @Test
     void getMembers() {
+        List<MemberResponse> members =  memberService.getMembers(false);
+
+        assertEquals(2,members.size());
     }
 
     @Test
     void addMember() {
+        MemberRequest memberRequest = new MemberRequest(new Member("johndoe123", "password123", "johndoe@example.com", "John", "Doe", "123 Main St", "New York", "10001"));
+        memberService.addMember(memberRequest);
+
+
+        Optional<Member> member =  memberRepository.findById(memberRequest.getUsername());
+
+        assertTrue(member.isPresent());
+
+
     }
 
 

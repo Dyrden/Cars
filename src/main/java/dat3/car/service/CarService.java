@@ -2,10 +2,7 @@ package dat3.car.service;
 
 import dat3.car.DTO.car.CarRequest;
 import dat3.car.DTO.car.CarResponse;
-import dat3.car.DTO.member.MemberRequest;
-import dat3.car.DTO.member.MemberResponse;
 import dat3.car.entity.Car;
-import dat3.car.entity.Member;
 import dat3.car.repository.CarRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
@@ -33,7 +30,7 @@ public class CarService {
         return new CarResponse(car, false);
     }
 
-    public void updateCar(CarRequest body, int id) {
+    public CarResponse updateCar(CarRequest body, int id) {
         Car car = carRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Car not found"));
 
         Optional.ofNullable(body.getBrand()).ifPresent(car :: setBrand);
@@ -41,12 +38,14 @@ public class CarService {
         Optional.ofNullable(body.getPricePerDay()).ifPresent(car :: setPricePrDay);
 
         carRepository.save(car);
+        return new CarResponse(car, false);
     }
 
-    public void updateCarDiscount(int id, int value) {
+    public CarResponse updateCarDiscount(int id, int value) {
         Car car = carRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Car not found"));
         car.setBestDiscount(value);
         carRepository.save(car);
+        return new CarResponse(car,true);
     }
 
     public void deleteMember(int id) {

@@ -35,4 +35,11 @@ public class CarRequest {
         this.model = model;
         this.pricePerDay = pricePerDay;
     }
+
+    public CarRequest(Car car) {
+        this.brand = car.getBrand();
+        this.model = car.getModel();
+        this.pricePerDay = car.getPricePrDay();
+
+    }
 }

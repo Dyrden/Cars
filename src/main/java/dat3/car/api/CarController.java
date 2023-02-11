@@ -27,7 +27,7 @@ public class CarController {
 
     //USER
     @GetMapping(path = "/{id}")
-    CarResponse getCarById(@PathVariable int id) throws Exception {
+    CarResponse getCarById(@PathVariable int id) {
         return carService.getCarById(id);
     }
 
@@ -41,13 +41,13 @@ public class CarController {
     @PutMapping("/{id}")
     ResponseEntity<Boolean> editCar(@RequestBody CarRequest body, @PathVariable int id) {
         carService.updateCar(body, id);
-        return null; //return code 200?
+        return ResponseEntity.ok(true);
     }
 
     //ADMIN
     @PatchMapping("/bestdiscount/{id}/{value}")
-    void setBestDiscountForCar(@PathVariable int id, @PathVariable int value) {
-        carService.updateCarDiscount(id, value);
+    CarResponse setBestDiscountForCar(@PathVariable int id, @PathVariable int value) {
+        return carService.updateCarDiscount(id, value);
     }
 
     //ADMIN

@@ -22,25 +22,26 @@ public class MemberController {
         this.memberService = memberService;
     }
 
-    //Security -> ADMIN ONLY
+    //ADMIN
     @GetMapping
     List<MemberResponse> getMembers() {
         return memberService.getMembers(false);
     }
 
-    //Security -> ADMIN ONLY + ???
+    //ADMIN
     @GetMapping(path = "/{username}")
     MemberResponse getMemberById(@PathVariable String username) {
         return memberService.getMemberById(username);
     }
 
-    //anonymous
+    //ANONYMOUS
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     MemberResponse addMember(@RequestBody MemberRequest body) {
         return memberService.addMember(body);
     }
 
     //USER
+    //user skal kunne rette sig selv
     @PutMapping("/{username}")
     ResponseEntity<Boolean> editMember(@RequestBody MemberRequest body, @PathVariable String username) {
         memberService.updateMember(body,username);

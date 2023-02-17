@@ -47,7 +47,8 @@ public class MemberService {
     }
 
     public void updateMember(MemberRequest body, String username) {
-        Member member = memberRepository.findById(username).orElseThrow( () -> new EntityNotFoundException("can't edit user"));
+        Member member = memberRepository.findById(username).orElseThrow( () ->
+            new EntityNotFoundException("Member with given ID does not exist"));
 
         Optional.ofNullable(body.getPassword()).ifPresent(member::setPassword);
         Optional.ofNullable(body.getEmail()).ifPresent(member::setEmail);
@@ -83,4 +84,6 @@ public class MemberService {
         Member member = findMemberById(username);
         return new MemberResponse(member, true);
     }
+
+
 }

@@ -5,7 +5,9 @@ import dat3.car.DTO.car.CarResponse;
 import dat3.car.entity.Car;
 import dat3.car.repository.CarRepository;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -49,6 +51,9 @@ public class CarService {
     }
 
     public void deleteCar(int id) {
+        if(!carRepository.existsById(id)) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"øv");
+        }
         carRepository.deleteById(id);
     }
 

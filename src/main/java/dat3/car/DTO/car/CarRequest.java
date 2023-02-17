@@ -27,7 +27,7 @@ public class CarRequest {
     LocalDateTime edited;
 
     public static Car getCarEntity(CarRequest c) {
-        return new Car(c.brand, c.model, c.pricePerDay);
+        return Car.builder().brand(c.brand).model(c.model).pricePrDay(c.pricePerDay).build();
     }
 
     public CarRequest(String brand, String model, Double pricePerDay) {

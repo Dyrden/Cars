@@ -64,7 +64,7 @@ class ReservationServiceH2Test {
     void addReservation_dateAlreadyReserved() {
         ReservationRequest reservationRequest = new ReservationRequest();
         reservationRequest.setCar_id(car1_id);
-
+        reservationRequest.setUsername("m2");
         reservationRequest.setRentalDate(now);
 
 

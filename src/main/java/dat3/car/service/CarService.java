@@ -52,7 +52,7 @@ public class CarService {
 
     public void deleteCar(int id) {
         if(!carRepository.existsById(id)) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"øv");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"No car with ID to delete");
         }
         carRepository.deleteById(id);
     }

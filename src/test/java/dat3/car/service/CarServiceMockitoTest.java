@@ -92,10 +92,11 @@ class CarServiceMockitoTest {
     }
 
     @Test
-    void deleteMember() {
+    void deleteCar() {
 
         int id = 1;
         Mockito.when(carRepository.findById(id)).thenReturn(Optional.empty());
+        Mockito.when(carRepository.existsById(id)).thenReturn(true);
         Optional<Car> expected = Optional.empty();
 
         carService.deleteCar(id);

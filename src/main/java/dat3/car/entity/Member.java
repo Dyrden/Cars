@@ -1,6 +1,7 @@
 package dat3.car.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import dat3.security.entity.UserWithRoles;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -32,9 +33,11 @@ public class Member extends UserWithRoles {
     private boolean approved;
     private int ranking;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @CreationTimestamp
     private LocalDateTime created;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @UpdateTimestamp
     private LocalDateTime lastEdited;
 

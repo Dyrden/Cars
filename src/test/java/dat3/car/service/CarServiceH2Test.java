@@ -33,12 +33,12 @@ class CarServiceH2Test {
     @BeforeEach
     void setUp() {
         if (!dataIsReady) {
-            carRepository.save(new Car("Toyota", "Camry", 50.0));
-            carRepository.save(new Car("Honda", "Civic", 45.0));
-            carRepository.save(new Car("Mazda", "3", 40.0));
-            carRepository.save(new Car("Ford", "Mustang", 60.0));
-            carRepository.save(new Car("Nissan", "Altima", 55.0));
-            carRepository.save(new Car("BMW", "3-Series", 60.0));
+            carRepository.save( Car.builder().brand("Toyota").model("Camry").pricePrDay(50.0).build());
+            carRepository.save( Car.builder().brand("Honda").model("Civic").pricePrDay(50.0).build());
+            carRepository.save( Car.builder().brand("Mazda").model("3").pricePrDay(50.0).build());
+            carRepository.save( Car.builder().brand("Ford").model("Mustang").pricePrDay(50.0).build());
+            carRepository.save( Car.builder().brand("Nissan").model("Altima").pricePrDay(50.0).build());
+            carRepository.save( Car.builder().brand("BMW").model("3-Series").pricePrDay(50.0).build());
             dataIsReady = true;
             carService = new CarService(carRepository);
         }

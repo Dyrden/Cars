@@ -5,7 +5,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -21,12 +23,12 @@ public class Reservation {
     LocalDateTime reservationDate;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
-    LocalDateTime rentalDate;
+    LocalDate rentalDate;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     Member member;
 
     @ManyToOne

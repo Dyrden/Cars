@@ -34,8 +34,8 @@ class CarServiceMockitoTest {
 
     @Test
     void getCars() {
-        Car car1 = new Car("Skoda", "XLB_825", 355);
-        Car car2 = new Car("Toyota", "HO_91-5", 650);
+        Car car1 = Car.builder().brand("Skoda").model("XLB_825").pricePrDay(355).build();
+        Car car2 = Car.builder().brand("Toyota").model("HO_91-5").pricePrDay(355).build();
         car1.setCreatedDate(LocalDateTime.now());
         car2.setCreatedDate(LocalDateTime.now());
         Mockito.when(carRepository.findAll()).thenReturn(List.of(car1,car2));
@@ -47,7 +47,7 @@ class CarServiceMockitoTest {
 
     @Test
     void addCar() {
-        Car car1 = new Car("Skoda", "XLB_825", 355);
+        Car car1 = Car.builder().brand("Skoda").model("XLB_825").pricePrDay(355).build();
         car1.setCreatedDate(LocalDateTime.now());
         Mockito.when(carRepository.save(any(Car.class))).thenReturn(car1);
 
@@ -61,7 +61,7 @@ class CarServiceMockitoTest {
 
     @Test
     void updateCar() {
-        Car car1 = new Car("Skoda", "XLB_825", 355);
+        Car car1 = Car.builder().brand("Skoda").model("XLB_825").pricePrDay(355).build();
         car1.setId(1);
         car1.setCreatedDate(LocalDateTime.now());
 
@@ -78,7 +78,7 @@ class CarServiceMockitoTest {
 
     @Test
     void updateCarDiscount() {
-        Car car1 = new Car("Skoda", "XLB_825", 355);
+        Car car1 = Car.builder().brand("Skoda").model("XLB_825").pricePrDay(355).build();
         car1.setBestDiscount(0);
         car1.setCreatedDate(LocalDateTime.now());
 
@@ -109,7 +109,7 @@ class CarServiceMockitoTest {
     @Test
     void getCarById() {
         int id = 1;
-        Car car = new Car("Skoda", "XLB_825", 355);
+        Car car = Car.builder().brand("Skoda").model("XLB_825").pricePrDay(355).build();
         car.setCreatedDate(LocalDateTime.now());
 
         Mockito.when(carRepository.findById(1)).thenReturn(Optional.of(car));

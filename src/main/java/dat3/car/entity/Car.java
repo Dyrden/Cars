@@ -1,6 +1,7 @@
 package dat3.car.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -30,8 +31,12 @@ public class Car {
     private double pricePrDay;
     @Column(name = "max_discount")
     private int bestDiscount;
+
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @CreationTimestamp
     private LocalDateTime createdDate;
+
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @UpdateTimestamp
     private LocalDateTime lastEditedDate;
 

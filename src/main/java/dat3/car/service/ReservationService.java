@@ -1,8 +1,8 @@
 package dat3.car.service;
 
 
-import dat3.car.DTO.reservation.ReservationRequest;
-import dat3.car.DTO.reservation.ReservationResponse;
+import dat3.car.dto.reservation.ReservationRequest;
+import dat3.car.dto.reservation.ReservationResponse;
 import dat3.car.entity.Car;
 import dat3.car.entity.Member;
 import dat3.car.entity.Reservation;

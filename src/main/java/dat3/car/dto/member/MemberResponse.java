@@ -1,9 +1,9 @@
-package dat3.car.DTO.member;
+package dat3.car.dto.member;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import dat3.car.DTO.reservation.ReservationResponse;
+import dat3.car.dto.reservation.ReservationResponse;
 import dat3.car.entity.Member;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

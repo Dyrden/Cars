@@ -1,8 +1,8 @@
 package dat3.car.api;
 
 
-import dat3.car.DTO.member.MemberRequest;
-import dat3.car.DTO.member.MemberResponse;
+import dat3.car.dto.member.MemberRequest;
+import dat3.car.dto.member.MemberResponse;
 
 import dat3.car.service.MemberService;
 import org.springframework.http.MediaType;

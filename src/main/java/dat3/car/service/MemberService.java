@@ -1,8 +1,8 @@
 package dat3.car.service;
 
 
-import dat3.car.DTO.member.MemberRequest;
-import dat3.car.DTO.member.MemberResponse;
+import dat3.car.dto.member.MemberRequest;
+import dat3.car.dto.member.MemberResponse;
 import dat3.car.entity.Member;
 import dat3.car.repository.MemberRepository;
 import jakarta.persistence.EntityNotFoundException;

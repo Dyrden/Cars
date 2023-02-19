@@ -1,7 +1,7 @@
 package dat3.car.api;
 
-import dat3.car.DTO.car.CarRequest;
-import dat3.car.DTO.car.CarResponse;
+import dat3.car.dto.car.CarRequest;
+import dat3.car.dto.car.CarResponse;
 import dat3.car.service.CarService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

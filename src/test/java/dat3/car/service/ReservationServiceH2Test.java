@@ -1,6 +1,6 @@
 package dat3.car.service;
 
-import dat3.car.DTO.reservation.ReservationRequest;
+import dat3.car.dto.reservation.ReservationRequest;
 import dat3.car.entity.Car;
 import dat3.car.entity.Member;
 import dat3.car.entity.Reservation;
@@ -14,7 +14,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 

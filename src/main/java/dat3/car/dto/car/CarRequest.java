@@ -1,7 +1,6 @@
-package dat3.car.DTO.car;
+package dat3.car.dto.car;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import dat3.car.entity.Car;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,10 +11,9 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class CarResponse {
+public class CarRequest {
 
-    int id; //Remember this is the primary key
+    int id;
     String brand;
     String model;
     Double pricePerDay;
@@ -28,17 +26,20 @@ public class CarResponse {
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss", shape = JsonFormat.Shape.STRING)
     LocalDateTime edited;
 
+    public static Car getCarEntity(CarRequest c) {
+        return Car.builder().brand(c.brand).model(c.model).pricePrDay(c.pricePerDay).build();
+    }
 
-    public CarResponse(Car car, boolean includeAll) {
-        this.id = car.getId();
+    public CarRequest(String brand, String model, Double pricePerDay) {
+        this.brand = brand;
+        this.model = model;
+        this.pricePerDay = pricePerDay;
+    }
+
+    public CarRequest(Car car) {
         this.brand = car.getBrand();
         this.model = car.getModel();
         this.pricePerDay = car.getPricePrDay();
-        this.created = car.getCreatedDate();
-        this.edited = car.getLastEditedDate();
-        if (includeAll) {
-            this.max_discount = car.getBestDiscount();
-        }
 
     }
 }

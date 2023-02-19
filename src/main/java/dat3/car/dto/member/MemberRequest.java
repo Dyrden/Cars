@@ -1,4 +1,4 @@
-package dat3.car.DTO.member;
+package dat3.car.dto.member;
 
 import dat3.car.entity.Member;
 import lombok.Getter;

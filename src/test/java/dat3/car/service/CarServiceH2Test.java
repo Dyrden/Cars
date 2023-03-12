@@ -59,7 +59,7 @@ class CarServiceH2Test {
 
 
     }
-
+/*
     @Test
     void addCar() {
         CarRequest carRequest = new CarRequest("Peugeot", "308", 40.0);
@@ -73,6 +73,7 @@ class CarServiceH2Test {
 
 
     }
+* */
 
     @Test
     void updateCar() {

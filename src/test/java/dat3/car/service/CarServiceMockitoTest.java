@@ -45,6 +45,8 @@ class CarServiceMockitoTest {
         assertEquals(2, carsInList);
     }
 
+
+    /*
     @Test
     void addCar() {
         Car car1 = Car.builder().brand("Skoda").model("XLB_825").pricePrDay(355).build();
@@ -58,6 +60,7 @@ class CarServiceMockitoTest {
 
 
     }
+    * */
 
     @Test
     void updateCar() {

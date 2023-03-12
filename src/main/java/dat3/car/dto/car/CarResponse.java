@@ -19,7 +19,7 @@ public class CarResponse {
     String brand;
     String model;
     Double pricePerDay;
-    Integer max_discount;
+    Integer bestDiscount;
 
 
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss", shape = JsonFormat.Shape.STRING)
@@ -37,7 +37,7 @@ public class CarResponse {
         this.created = car.getCreatedDate();
         this.edited = car.getLastEditedDate();
         if (includeAll) {
-            this.max_discount = car.getBestDiscount();
+            this.bestDiscount = car.getBestDiscount();
         }
 
     }

@@ -103,8 +103,8 @@ class CarServiceH2Test {
 
         CarResponse carResponse = carService.updateCarDiscount(id,newValue);
 
-        assertEquals(newValue, carResponse.getMax_discount());
-        assertNotEquals(oldValue,carResponse.getMax_discount());
+        assertEquals(newValue, carResponse.getBestDiscount());
+        assertNotEquals(oldValue,carResponse.getBestDiscount());
 
     }
 

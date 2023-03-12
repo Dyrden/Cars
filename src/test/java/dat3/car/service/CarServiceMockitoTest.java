@@ -87,7 +87,7 @@ class CarServiceMockitoTest {
 
         CarResponse carResponse =  carService.updateCarDiscount(1,newBestDiscount);
 
-        assertEquals(5,carResponse.getMax_discount());
+        assertEquals(5,carResponse.getBestDiscount());
 
     }
 

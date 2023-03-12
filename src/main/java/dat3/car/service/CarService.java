@@ -29,7 +29,7 @@ public class CarService {
     public CarResponse addCar(CarRequest body) {
         Car car = CarRequest.getCarEntity(body);
         car = carRepository.save(car);
-        return new CarResponse(car, false);
+        return new CarResponse(car, true);
     }
 
     public CarResponse updateCar(CarRequest body, int id) {

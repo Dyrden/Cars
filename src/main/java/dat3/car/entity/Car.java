@@ -29,7 +29,7 @@ public class Car {
     private String model;
     @Column(name = "rental_price_day")
     private double pricePrDay;
-    @Column(name = "max_discount")
+    @Column(name = "best_discount")
     private int bestDiscount;
 
     @JsonFormat(pattern = "yyyy-MM-dd")

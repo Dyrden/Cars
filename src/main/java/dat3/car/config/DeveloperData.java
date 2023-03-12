@@ -57,8 +57,14 @@ public class DeveloperData implements ApplicationRunner {
         member2.setFavoriteCarColours(Arrays.asList("Blue", "Yellow", "Black"));
         member2.setPhones(Map.of("arbejde", "67485763", "hjem", "58386715"));
 
+
+        List<Car> cars = new ArrayList<>();
+
         Car car1 = Car.builder().model("Skoda").brand("A27-B").pricePrDay(299.95).build();
         Car car2 = Car.builder().model("Toyota").brand("99X").pricePrDay(499.95).build();
+
+
+
 
         carRepository.save(car1);
         carRepository.save(car2);

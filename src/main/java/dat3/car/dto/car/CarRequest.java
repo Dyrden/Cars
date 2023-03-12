@@ -17,7 +17,7 @@ public class CarRequest {
     String brand;
     String model;
     Double pricePerDay;
-    Integer max_discount;
+    Integer bestDiscount;
 
 
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss", shape = JsonFormat.Shape.STRING)
@@ -27,13 +27,20 @@ public class CarRequest {
     LocalDateTime edited;
 
     public static Car getCarEntity(CarRequest c) {
-        return Car.builder().brand(c.brand).model(c.model).pricePrDay(c.pricePerDay).build();
+        return Car.builder().brand(c.brand).model(c.model).pricePrDay(c.pricePerDay).bestDiscount(c.bestDiscount).build();
     }
 
     public CarRequest(String brand, String model, Double pricePerDay) {
         this.brand = brand;
         this.model = model;
         this.pricePerDay = pricePerDay;
+    }
+
+    public CarRequest(String brand, String model, Double pricePerDay, Integer bestDiscount) {
+        this.brand = brand;
+        this.model = model;
+        this.pricePerDay = pricePerDay;
+        this.bestDiscount = bestDiscount;
     }
 
     public CarRequest(Car car) {

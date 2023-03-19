@@ -90,7 +90,7 @@ public class SecurityConfig {
             //necessary to allow for "nice" JSON Errors
             .requestMatchers("/error").permitAll()
 
-        //DENNE HER
+
             .requestMatchers("/", "/**").permitAll());
 
            // .requestMatchers(HttpMethod.GET,"/api/demo/anonymous").permitAll());

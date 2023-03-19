@@ -62,12 +62,31 @@ public class DeveloperData implements ApplicationRunner {
 
         Car car1 = Car.builder().model("Skoda").brand("A27-B").pricePrDay(299.95).build();
         Car car2 = Car.builder().model("Toyota").brand("99X").pricePrDay(499.95).build();
+        cars.add(Car.builder().model("Camry").brand("Toyota").pricePrDay(599.99).build());
+        cars.add(Car.builder().model("Corolla").brand("Toyota").pricePrDay(499.95).build());
+        cars.add(Car.builder().model("Accord").brand("Honda").pricePrDay(699.50).build());
+        cars.add(Car.builder().model("Civic").brand("Honda").pricePrDay(549.99).build());
+        cars.add(Car.builder().model("Altima").brand("Nissan").pricePrDay(649.99).build());
+        cars.add(Car.builder().model("Sentra").brand("Nissan").pricePrDay(499.99).build());
+        cars.add(Car.builder().model("Fusion").brand("Ford").pricePrDay(599.95).build());
+        cars.add(Car.builder().model("Focus").brand("Ford").pricePrDay(499.99).build());
+        cars.add(Car.builder().model("Sonata").brand("Hyundai").pricePrDay(599.99).build());
+        cars.add(Car.builder().model("Elantra").brand("Hyundai").pricePrDay(499.95).build());
+        cars.add(Car.builder().model("Impreza").brand("Subaru").pricePrDay(699.50).build());
+        cars.add(Car.builder().model("Legacy").brand("Subaru").pricePrDay(599.99).build());
+        cars.add(Car.builder().model("3-Series").brand("BMW").pricePrDay(899.99).build());
+        cars.add(Car.builder().model("5-Series").brand("BMW").pricePrDay(999.95).build());
+        cars.add(Car.builder().model("C-Class").brand("Mercedes-Benz").pricePrDay(899.99).build());
+        cars.add(Car.builder().model("Toyota").brand("99X").pricePrDay(499.95).build());
+
 
 
 
 
         carRepository.save(car1);
         carRepository.save(car2);
+
+        carRepository.saveAll(cars);
 
         memberRepository.save(member1);
         memberRepository.save(member2);

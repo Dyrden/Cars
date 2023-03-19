@@ -22,14 +22,12 @@ public class CarController {
         this.carService = carService;
     }
 
-    // USER
-    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
+    // anonymous
     @GetMapping
     List<CarResponse> getCars() {
         return carService.getCars();
     }
 
-    //USER
     @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
     @GetMapping(path = "/{id}")
     CarResponse getCarById(@PathVariable int id) {
